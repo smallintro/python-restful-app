@@ -42,9 +42,11 @@ class MobileInfoDB(object):
                 new_mobile = MobileInfo(
                     mobile_id=mobile_info.mobile_id,
                     mobile_name=mobile_info.mobile_name,
-                    mobile_category=mobile_info.mobile_category,
-                    mobile_owner=mobile_info.mobile_owner,
+                    brand_id=mobile_info.brand_id,
+                    storage_size=mobile_info.storage_size,
+                    ram_size=mobile_info.ram_size,
                 )
+
                 log.debug(f"add_mobile_info {new_mobile}")
                 session.add(new_mobile)
                 session.commit()
@@ -69,10 +71,12 @@ class MobileInfoDB(object):
                 query_result.update(
                     {
                         MobileInfo.mobile_name: mobile_info.mobile_name,
-                        MobileInfo.mobile_owner: mobile_info.mobile_owner,
-                        MobileInfo.mobile_category: mobile_info.mobile_category,
+                        MobileInfo.brand_id: mobile_info.brand_id,
+                        MobileInfo.storage_size: mobile_info.storage_size,
+                        MobileInfo.ram_size: mobile_info.ram_size,
                     }
                 )
+
                 session.commit()
                 result = MobileInfo
         except Exception as e:

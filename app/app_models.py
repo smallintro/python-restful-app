@@ -1,7 +1,7 @@
 from datetime import datetime
 
 from db_connection import Base
-from pydantic import BaseModel
+from pydantic import BaseModel, validator, ValidationError
 from sqlalchemy import Column, Numeric, String, BigInteger, Integer, DateTime, ForeignKey
 from sqlalchemy.orm import relationship
 from typing import List
@@ -59,5 +59,5 @@ class MobileInfoResponse(BaseModel):
     sold_on : datetime = None
 
 
-class MobileInfosResponse(BaseModel):
-    data = List[MobileInfoResponse]
+#class MobileInfosResponse(BaseModel):
+    #data = List[MobileInfoResponse]

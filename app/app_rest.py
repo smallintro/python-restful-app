@@ -39,4 +39,4 @@ def del_mobile_info(mobileid: str):
     return {"mobile_info": result}
 
 if __name__ == "__main__":
-    uvicorn.run("app_rest:app_v1", host="127.0.0.1", port=5000, log_level="info")
+    uvicorn.run("app_rest:app_v1", host="127.0.0.1", port=8080, log_level="info")
